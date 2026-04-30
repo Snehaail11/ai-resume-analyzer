@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# 🤖 AI Resume Analyzer
+[![React](https://img.shields.io/badge/React-18.3-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-green)](https://tailwindcss.com/)
+[![Groq](https://img.shields.io/badge/Groq-API-purple)](https://groq.com)
+[![Vite](https://img.shields.io/badge/Vite-5.4-yellow)](https://vitejs.dev/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 🎯 **Smart AI tool that compares your resume against any job description and provides actionable feedback to improve your ATS score.**
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+### Core Features
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 📄 **Resume Upload** | PDF, DOCX, TXT support with drag & drop | ✅ |
+| 💼 **JD Upload** | PDF, DOCX, TXT support with drag & drop | ✅ |
+| ✍️ **Text Paste** | Manual text input as alternative | ✅ |
+| 🤖 **AI Analysis** | Powered by Groq Llama 3.3 70B | ✅ |
+| 📊 **Match Score** | 0-100 score based on JD alignment | ✅ |
+| 🔑 **Keyword Analysis** | Found vs Missing keywords | ✅ |
+| ⚠️ **Gap Detection** | Specific requirement mismatches | ✅ |
+| 💡 **Recommendations** | Prioritized actionable tips | ✅ |
+| 🎯 **Domain Detection** | Finance, Tech, HR, Marketing | ✅ |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### UX Features
+- 🎨 Modern, responsive design
+- 📱 Mobile-friendly interface
+- ⚡ Fast loading with Vite
+- 🔄 Real-time analysis status
+- 📁 Drag & drop file upload
+- 🧹 Clean error handling
+- 🔒 Privacy-focused (no data storage)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Frontend
+```json
+{
+  "framework": "React 18.3.1",
+  "language": "TypeScript 5.6.2",
+  "buildTool": "Vite 5.4.10",
+  "styling": "Tailwind CSS 3.4.17",
+  "fileUpload": "react-dropzone"
+}
